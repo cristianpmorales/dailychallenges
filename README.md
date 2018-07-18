@@ -244,3 +244,26 @@ function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
     let arr = [age1, age2, age3, age4, age5, age6, age7, age8]
     return Math.floor(Math.sqrt(arr.map(a => a * a).reduce((b,c) => b + c)) / 2)
   }
+  
+  ## Daily Challenge 11
+  
+  // Your task is to remove all duplicate words from string, leaving only single words entries.
+// Example:
+// Input:
+// 'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+// Output:
+// 'alpha beta gamma delta'
+
+Test.describe('Example tests', _ => {
+  Test.it('should handle example case', _ => {
+    Test.assertEquals(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'), 'alpha beta gamma delta');
+  });
+});
+
+const removeDuplicateWords = s =>{
+  let arr = s.split(' ')
+ arr = arr.filter(function(el,i){
+     return arr.indexOf(el) == i
+ })
+return arr.join(' ')
+}

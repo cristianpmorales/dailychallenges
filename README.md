@@ -329,3 +329,24 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 //   console.log(str.slice)
   return str.slice(0,-1);
 }
+
+
+  ## Daily Challenge 14
+
+/*
+Given an array of one's and zero's convert the equivalent binary value to an integer.
+Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1
+*/
+
+const binaryArrayToNumber = arr => {
+  return parseInt(arr.join(''),2);
+};
+
+console.log( binaryArrayToNumber([0, 0, 0, 1]) ); // ==> 1
+console.log( binaryArrayToNumber([0, 0, 1, 0]) ); // ==> 2
+console.log( binaryArrayToNumber([0, 1, 0, 1]) ); // ==> 5
+console.log( binaryArrayToNumber([1, 0, 0, 1]) ); // ==> 9
+console.log( binaryArrayToNumber([0, 0, 1, 0]) ); // ==> 2
+console.log( binaryArrayToNumber([0, 1, 1, 0]) ); // ==> 6
+console.log( binaryArrayToNumber([1, 1, 1, 1]) ); // ==> 15
+console.log( binaryArrayToNumber([1, 0, 1, 1]) ); // ==> 11

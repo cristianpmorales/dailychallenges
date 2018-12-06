@@ -1,20 +1,20 @@
-// Your task is to remove all duplicate words from string, leaving only single words entries.
-// Example:
-// Input:
-// 'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
-// Output:
-// 'alpha beta gamma delta'
+var isSquare = function(n){
+  // Numbers less than 0 are not square
+  if (n < 0) { console.log('Not a number ') ; }
 
-Test.describe('Example tests', _ => {
-  Test.it('should handle example case', _ => {
-    Test.assertEquals(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'), 'alpha beta gamma delta');
-  });
-});
+  // Get square root of number
+  x=Math.sqrt(n);
 
-const removeDuplicateWords = s =>{
-  let arr = s.split(' ')
- arr = arr.filter(function(el,i){
-     return arr.indexOf(el) == i
- })
-return arr.join(' ')
+  // Check if sqrt is an integer
+  if (Number.isInteger(x)) {
+    return true;
+  }
+  else return false;
 }
+
+console.log(isSquare(-1)); // => false
+console.log(isSquare( 3)); // => false
+console.log(isSquare( 4)); // => true
+console.log(isSquare(25)); // => true
+console.log(isSquare(26)); // => false
+console.log(isSquare('hello')); // => false
